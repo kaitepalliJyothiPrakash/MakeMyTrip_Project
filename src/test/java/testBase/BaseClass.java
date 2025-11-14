@@ -21,7 +21,7 @@ public class BaseClass {
 	
 	@BeforeClass
 	@Parameters({"os","browser"})
-	public void setup(String os,String br) throws IOException 
+	public void setup(String os,String br) throws IOException, InterruptedException 
 	{
 		FileReader file=new FileReader("./src//test//resources//config.properties");
 		p=new Properties();
@@ -42,8 +42,10 @@ public class BaseClass {
 		}
 		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
 		driver.get(p.getProperty("appURL"));//Reading URL from properties file
 		driver.manage().window().maximize();
+		Thread.sleep(2000);
 	}
 	
 	@AfterClass

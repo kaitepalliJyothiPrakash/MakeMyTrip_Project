@@ -17,7 +17,11 @@ public class HomePage extends BasePage{
 	public HomePage(WebDriver driver) {
 		super(driver);
 	}
+	@FindBy(xpath="//span[@class='commonModal__close']")WebElement clsPopup;
 	
+	public void closePopup() {
+		clsPopup.click();
+	}
 
 	
 }

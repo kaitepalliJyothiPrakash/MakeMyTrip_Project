@@ -7,10 +7,11 @@ import testBase.BaseClass;
 
 public class TestCaseImplementation extends BaseClass{
 
-	HomePage homepage;
+	
 	@Test
 	public void method1()
 	{
-		
+		HomePage homepage=new HomePage(driver);
+		homepage.closePopup();
 	}
 }
