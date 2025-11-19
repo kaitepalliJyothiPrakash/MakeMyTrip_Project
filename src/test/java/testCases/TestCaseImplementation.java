@@ -8,10 +8,11 @@ import testBase.BaseClass;
 public class TestCaseImplementation extends BaseClass{
 
 	
-	@Test
-	public void method1()
+	@Test(priority=1)
+	public void closingPopupInHomePage()
 	{
 		HomePage homepage=new HomePage(driver);
 		homepage.closePopup();
 	}
+	
 }
