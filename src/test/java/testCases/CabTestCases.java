@@ -6,18 +6,10 @@ import java.io.IOException;
 import org.testng.annotations.Test;
 
 import pageObjectModel.CabPage;
-import pageObjectModel.HomePage;
 import testBase.BaseClass;
 
-public class TestCaseImplementation extends BaseClass{
-
+public class CabTestCases extends BaseClass{
 	
-	@Test
-	public void method1()
-	{
-		HomePage homepage=new HomePage(driver);
-		homepage.closePopup();
-	}
 	@Test
 	public void method2() throws InterruptedException, IOException {
 		CabPage cabs=new CabPage(driver);
@@ -28,6 +20,5 @@ public class TestCaseImplementation extends BaseClass{
 		cabs.search();
 		cabs.filter();
 		cabs.lowestprice();
-	
-	
-}}
+	}
+}
