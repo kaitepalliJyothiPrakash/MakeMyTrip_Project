@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 
 import pageObjectModel.CabPage;
 import pageObjectModel.HomePage;
+import pageObjectModel.HotelPage;
 import testBase.BaseClass;
 
 public class TestCaseImplementation extends BaseClass{
@@ -28,6 +29,19 @@ public class TestCaseImplementation extends BaseClass{
 		cabs.search();
 		cabs.filter();
 		cabs.lowestprice();
+	}
+
+	
+	
+	@Test
+    public void method4() throws InterruptedException {
+        HotelPage hotelPage = new HotelPage(driver);
+        hotelPage.openHotelsPage();
+        Thread.sleep(5000); 
+        hotelPage.closePopupIfPresent();
+        hotelPage.clickGuestDropdown();
+        hotelPage.increaseAdultsCount();
+
 	
 	
 }}
