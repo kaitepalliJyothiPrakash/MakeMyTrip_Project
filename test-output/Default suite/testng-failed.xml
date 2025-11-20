@@ -6,6 +6,8 @@
       <class name="testCases.TestCaseImplementation">
         <methods>
           <include name="method1"/>
+          <include name="method2"/>
+          <include name="setup"/>
         </methods>
       </class> <!-- testCases.TestCaseImplementation -->
     </classes>

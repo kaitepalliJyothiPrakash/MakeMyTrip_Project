@@ -48,10 +48,10 @@ public class BaseClass {
 		Thread.sleep(2000);
 	}
 	
-	@AfterClass
-	public void tearDown()
-	{
-		driver.quit();
-	}
+//	@AfterClass
+//	public void tearDown()
+//	{
+//		driver.quit();
+//	}
 	
 }
