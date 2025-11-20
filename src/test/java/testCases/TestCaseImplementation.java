@@ -1,6 +1,5 @@
 package testCases;
 
-import org.testng.annotations.Test;
 import java.io.IOException;
 
 import org.testng.annotations.Test;
@@ -13,14 +12,16 @@ import testBase.BaseClass;
 public class TestCaseImplementation extends BaseClass{
 
 	
-	@Test
-	public void method1()
+	@Test(priority=1)
+	public void closingPopupInHomePage()
 	{
 		HomePage homepage=new HomePage(driver);
 		homepage.closePopup();
 	}
-	@Test
-	public void method2() throws InterruptedException, IOException {
+
+	@Test(priority=2)
+	public void method2() throws InterruptedException, IOException 
+	{
 		CabPage cabs=new CabPage(driver);
 		cabs.excel();
 		cabs.cab();
@@ -43,5 +44,6 @@ public class TestCaseImplementation extends BaseClass{
         hotelPage.increaseAdultsCount();
 
 	
-	
-}}
+	}
+}
+
