@@ -96,7 +96,7 @@ public class TestCaseImplementation extends BaseClass{
     public void hotelDetails() throws InterruptedException {
         HotelPage hotelPage = new HotelPage(driver);
         hotelPage.openHotelsPage();
-        Thread.sleep(3000); 
+        
         hotelPage.clickGuestDropdown();
         hotelPage.increaseAdultsCount();
 

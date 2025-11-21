@@ -12,8 +12,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
  
 public class HotelPage
 {
-	private WebDriver driver;
-	private WebDriverWait wait;
+	WebDriver driver;
+	WebDriverWait wait;
  
  
 // Constructor
@@ -25,13 +25,10 @@ public class HotelPage
 	}
  
  
-	@FindBy(xpath = "//span[@class='commonModal__close']")
-	private WebElement closePopup;
- 
 	@FindBy(xpath = "//input[@id='guest']")
 	private WebElement guestDropdown;
  
-	@FindBy(xpath = "//button[@class='counter__button counter__button--increment' and contains(@aria-label,'Increase value from 2')]")
+	@FindBy(xpath = "//div[contains(@aria-label,'Adults counter')]//button[2]")
 	private WebElement plusButton;
  
 	@FindBy(xpath = "//div[contains(@aria-label,'Adults counter')]//span")
@@ -47,13 +44,13 @@ public class HotelPage
  
 	public void clickGuestDropdown()
 	{
-		wait.until(ExpectedConditions.elementToBeClickable(guestDropdown)).click();
+		guestDropdown.click();
 	}
  
 	public void increaseAdultsCount()
 	{
-	wait.until(ExpectedConditions.visibilityOf(plusButton));
-	int val = Integer.parseInt(valueSpan.getText());
+	String values=valueSpan.getText();
+	int val = Integer.parseInt(values);
 	int newVal = Integer.MIN_VALUE;
  
 	while (val > newVal)
