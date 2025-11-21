@@ -15,9 +15,10 @@ public class HomePage extends BasePage{
 		super(driver);
 	}
 	@FindBy(xpath="//span[@class='commonModal__close']")WebElement clsPopup;
-	
+	@FindBy(xpath="//div[@class='tp-dt-header-icon'][2]") WebElement popup;
 	public void closePopup() {
 		clsPopup.click();
+		popup.click();
 	}
 
 	

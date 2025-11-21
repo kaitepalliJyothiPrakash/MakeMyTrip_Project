@@ -8,8 +8,8 @@
       <class name="testCases.TestCaseImplementation">
         <methods>
           <include name="closingPopupInHomePage"/>
-          <include name="method4"/>
-          <include name="method2"/>
+          <include name="hotelDetails"/>
+          <include name="implementCab"/>
           <include name="implementGiftCard"/>
           <include name="setup"/>
         </methods>

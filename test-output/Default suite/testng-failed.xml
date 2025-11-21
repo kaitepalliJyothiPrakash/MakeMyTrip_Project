@@ -5,8 +5,10 @@
     <classes>
       <class name="testCases.TestCaseImplementation">
         <methods>
-          <include name="method1"/>
-          <include name="method2"/>
+          <include name="closingPopupInHomePage"/>
+          <include name="hotelDetails"/>
+          <include name="implementCab"/>
+          <include name="implementGiftCard"/>
           <include name="setup"/>
         </methods>
       </class> <!-- testCases.TestCaseImplementation -->

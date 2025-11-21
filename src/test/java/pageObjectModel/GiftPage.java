@@ -20,6 +20,10 @@ public class GiftPage extends BasePage {
 	@FindBy(xpath="//a[@data-cy='submenu_Giftcards']")
 	WebElement giftcrds;
 	
+	//close pop up
+	@FindBy(xpath="//div[@class='tp-dt-header-icon'][2]")
+	WebElement aipopup;
+	
 	//Birthday card
 	@FindBy(xpath="//div[@class='gc__right']/div[3]/ul/li[2]")
 	WebElement bdcard;
@@ -48,6 +52,9 @@ public class GiftPage extends BasePage {
 	@FindBy(xpath="//p[@class='red-text font11 append-top5']")
 	WebElement msgDisplay;
 	
+	//Header icons
+	@FindBy(xpath="//ul[@class='makeFlex font12 headerIconsGap']")
+	WebElement header;
 	
 	//Hover to drop down
 	public void hoverMenu(WebDriver driver) throws InterruptedException{
@@ -61,6 +68,10 @@ public class GiftPage extends BasePage {
 		giftcrds.click();
 	}
 	
+	//close pop up
+	public void closeaipopup() {
+		aipopup.click();;
+	}
 	//Scroll to birthday gift card and click
 	public void executeBcard(WebDriver driver) throws InterruptedException{
 		JavascriptExecutor js = (JavascriptExecutor)driver;
@@ -77,7 +88,6 @@ public class GiftPage extends BasePage {
 	}
 	
 	//Fill the form details
-	//hello
 	public void sendName(String name) {
 		senderName.sendKeys(name);
 	}
@@ -98,4 +108,12 @@ public class GiftPage extends BasePage {
 		System.out.println(msgDisplay.getText());
 		Thread.sleep(2000);
 	}
+	
+	public void scrollup(WebDriver driver) throws InterruptedException {
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		js.executeScript("arguments[0].scrollIntoView();", header);
+		Thread.sleep(2000);
+	}
+	
+	
 }

@@ -11,6 +11,7 @@ import pageObjectModel.HomePage;
 import pageObjectModel.HotelPage;
 import testBase.BaseClass;
 import utilities.ExcelUtilities;
+import utilities.Screenshot;
 
 
 public class TestCaseImplementation extends BaseClass{
@@ -23,13 +24,27 @@ public class TestCaseImplementation extends BaseClass{
 		homepage.closePopup();
 	}
 
-	@Test(priority=2)
-	public void method2() throws InterruptedException, IOException 
+	@DataProvider(name="CabData")
+	public String[][] getData() throws IOException{
+		String path=".//src/test/java/utilities/Project_InputData.xlsx";
+		ExcelUtilities xlutils=new ExcelUtilities(path);
+		int totalcols=xlutils.getCellCount("Sheet1",0);
+		String cabdata[][]=new String[1][totalcols];
+			
+			for(int j=0;j<totalcols;j++) 
+			{
+				cabdata[0][j]= xlutils.getCellData("Sheet1",0, j);  
+			}
+		
+		return cabdata;
+	}
+
+	@Test(dependsOnMethods= "closingPopupInHomePage",dataProvider="CabData")
+	public void implementCab(String pick,String dropLocation,String months,String date) throws InterruptedException, IOException
 	{
 		CabPage cabs=new CabPage(driver);
-		cabs.excel();
-		cabs.cab();
-		cabs.date();
+		cabs.cab(pick,dropLocation);
+		cabs.date(months,date);
 		cabs.cabtime();
 		cabs.search();
 		cabs.filter();
@@ -37,31 +52,29 @@ public class TestCaseImplementation extends BaseClass{
 	}
 	
 	
+	
 	@DataProvider(name="GiftFormData")
-	public String [][] getData() throws IOException
+	public String [][] getgiftData() throws IOException
 	{
-		String path=".\\utilities\\Project.xlsx";
-		ExcelUtilities xlutil=new ExcelUtilities(path);//creating an object for XLUtility
+		String path=".//src/test/java/utilities/Project_InputData.xlsx";
+		ExcelUtilities xlutil=new ExcelUtilities(path);
 		
-		int totalrows=xlutil.getRowCount("Sheet1");	
 		int totalcols=xlutil.getCellCount("Sheet1",1);
 				
-		String logindata[][]=new String[totalrows][totalcols];
-		for(int i=1;i<=totalrows;i++)  
-		{		
-			for(int j=0;j<totalcols;j++)  //i is rows j is column
+		String giftformdata[][]=new String[1][totalcols];	
+			for(int j=0;j<totalcols;j++)  
 			{
-				logindata[i][j]= xlutil.getCellData("Sheet1",i, j);  
+				giftformdata[0][j]= xlutil.getCellData("Sheet1",1, j);  
 			}
-		}
-	return logindata;
+	return giftformdata;
 	}
 
-	@Test(dependsOnMethods={"method2"})
-	public void implementGiftCard(String name,String mobileno,String email) throws InterruptedException{
+	@Test(dependsOnMethods="implementCab",dataProvider = "GiftFormData")
+	public void implementGiftCard(String name,String mobileno,String email) throws InterruptedException, IOException{
 	GiftPage gp = new GiftPage(driver);
 	gp.hoverMenu(driver);
 	gp.giftcardOption();
+	gp.closeaipopup();
 	gp.executeBcard(driver);
 
 	gp.detailsForm(driver);
@@ -72,14 +85,18 @@ public class TestCaseImplementation extends BaseClass{
 	gp.clickButton();
 
 	gp.getDisplayedMsg();
+	Screenshot.getScreenshot(driver,"GiftCardInvalidInputs");
+	
+	gp.scrollup(driver);
+	
+	//System.out.println(name+" >>> "+ mobileno+" >>> "+email);
 	}
 
-	@Test
-    public void method4() throws InterruptedException {
+	@Test(dependsOnMethods= "implementGiftCard")
+    public void hotelDetails() throws InterruptedException {
         HotelPage hotelPage = new HotelPage(driver);
         hotelPage.openHotelsPage();
-        Thread.sleep(5000); 
-        hotelPage.closePopupIfPresent();
+        Thread.sleep(3000); 
         hotelPage.clickGuestDropdown();
         hotelPage.increaseAdultsCount();
 
