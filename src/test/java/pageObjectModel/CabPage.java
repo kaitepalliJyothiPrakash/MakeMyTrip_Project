@@ -48,7 +48,7 @@ public class CabPage extends BasePage{
 		picks.sendKeys(pick);
 		// Waiting for dropdown
 		wait.until(ExpectedConditions.visibilityOfAllElements(dropdown));
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		// Selecting an option
 		option.click();
 		//entering the drop location
@@ -56,7 +56,7 @@ public class CabPage extends BasePage{
 		drop.sendKeys(droplocation);
 		//waiting for dropdown
 		wait.until(ExpectedConditions.visibilityOfAllElements(dropdown2));
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		//Selecting an option
 		option2.click();
 	}
@@ -67,7 +67,7 @@ public class CabPage extends BasePage{
 	    	List<WebElement> options=month_option;
 		    String current_month=options.get(0).getText();
 	    	if(!current_month.equalsIgnoreCase(months)) {
-	    		Thread.sleep(2000);
+	    		Thread.sleep(1000);
 	            next_button.click();
 	         }
 	    	else {

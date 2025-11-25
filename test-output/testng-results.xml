@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-11-22T10:18:25 IST" name="Suite" finished-at="2025-11-22T10:19:19 IST" duration-ms="53605">
+  <suite started-at="2025-11-25T15:09:46 IST" name="Suite" finished-at="2025-11-25T15:10:38 IST" duration-ms="52717">
     <groups>
     </groups>
-    <test started-at="2025-11-22T10:18:25 IST" name="Test" finished-at="2025-11-22T10:19:19 IST" duration-ms="53605">
+    <test started-at="2025-11-25T15:09:46 IST" name="Test" finished-at="2025-11-25T15:10:38 IST" duration-ms="52717">
       <class name="testCases.TestCaseImplementation">
-        <test-method is-config="true" signature="setup(java.lang.String,java.lang.String)[pri:0, instance:testCases.TestCaseImplementation@79defdc]" started-at="2025-11-22T10:18:25 IST" name="setup" finished-at="2025-11-22T10:18:31 IST" duration-ms="5987" status="PASS">
+        <test-method is-config="true" signature="setup(java.lang.String,java.lang.String)[pri:0, instance:testCases.TestCaseImplementation@79defdc]" started-at="2025-11-25T15:09:46 IST" name="setup" finished-at="2025-11-25T15:09:52 IST" duration-ms="6491" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -23,11 +23,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="closingPopupInHomePage()[pri:1, instance:testCases.TestCaseImplementation@79defdc]" started-at="2025-11-22T10:18:31 IST" name="closingPopupInHomePage" finished-at="2025-11-22T10:18:33 IST" duration-ms="2082" status="PASS">
+        <test-method signature="closingPopupInHomePage()[pri:1, instance:testCases.TestCaseImplementation@79defdc]" started-at="2025-11-25T15:09:52 IST" name="closingPopupInHomePage" finished-at="2025-11-25T15:09:54 IST" duration-ms="2189" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closingPopupInHomePage -->
-        <test-method signature="implementCab(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testCases.TestCaseImplementation@79defdc]" started-at="2025-11-22T10:18:35 IST" name="implementCab" data-provider="CabData" finished-at="2025-11-22T10:18:52 IST" depends-on-methods="testCases.TestCaseImplementation.closingPopupInHomePage" duration-ms="16937" status="PASS">
+        <test-method signature="implementCab(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testCases.TestCaseImplementation@79defdc]" started-at="2025-11-25T15:09:56 IST" name="implementCab" data-provider="CabData" finished-at="2025-11-25T15:10:10 IST" depends-on-methods="testCases.TestCaseImplementation.closingPopupInHomePage" duration-ms="13897" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -53,7 +53,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- implementCab -->
-        <test-method signature="implementGiftCard(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testCases.TestCaseImplementation@79defdc]" started-at="2025-11-22T10:18:52 IST" name="implementGiftCard" data-provider="GiftFormData" finished-at="2025-11-22T10:19:08 IST" depends-on-methods="testCases.TestCaseImplementation.implementCab" duration-ms="15470" status="PASS">
+        <test-method signature="implementGiftCard(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testCases.TestCaseImplementation@79defdc]" started-at="2025-11-25T15:10:10 IST" name="implementGiftCard" data-provider="GiftFormData" finished-at="2025-11-25T15:10:20 IST" depends-on-methods="testCases.TestCaseImplementation.implementCab" duration-ms="9998" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -74,11 +74,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- implementGiftCard -->
-        <test-method signature="hotelDetails()[pri:0, instance:testCases.TestCaseImplementation@79defdc]" started-at="2025-11-22T10:19:08 IST" name="hotelDetails" finished-at="2025-11-22T10:19:13 IST" depends-on-methods="testCases.TestCaseImplementation.implementGiftCard" duration-ms="5233" status="PASS">
+        <test-method signature="hotelDetails()[pri:0, instance:testCases.TestCaseImplementation@79defdc]" started-at="2025-11-25T15:10:20 IST" name="hotelDetails" finished-at="2025-11-25T15:10:32 IST" depends-on-methods="testCases.TestCaseImplementation.implementGiftCard" duration-ms="11972" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- hotelDetails -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.TestCaseImplementation@79defdc]" started-at="2025-11-22T10:19:13 IST" name="tearDown" finished-at="2025-11-22T10:19:19 IST" duration-ms="5710" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.TestCaseImplementation@79defdc]" started-at="2025-11-25T15:10:32 IST" name="tearDown" finished-at="2025-11-25T15:10:38 IST" duration-ms="5951" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

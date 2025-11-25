@@ -10,7 +10,7 @@
           <include name="closingPopupInHomePage"/>
           <include name="tearDown"/>
           <include name="hotelDetails"/>
-          <include name="implementCab"/>
+          <include name="implementCab" invocation-numbers="0"/>
           <include name="setup"/>
           <include name="implementGiftCard"/>
         </methods>

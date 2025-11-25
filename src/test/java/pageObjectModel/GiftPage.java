@@ -60,7 +60,7 @@ public class GiftPage extends BasePage {
 	public void hoverMenu(WebDriver driver) throws InterruptedException{
 		Actions action = new Actions(driver);
 		action.moveToElement(drpdwn).perform();
-		Thread.sleep(2000);
+		//Thread.sleep(2000);
 	}
 	
 	//Select giftcard option
@@ -76,7 +76,7 @@ public class GiftPage extends BasePage {
 	public void executeBcard(WebDriver driver) throws InterruptedException{
 		JavascriptExecutor js = (JavascriptExecutor)driver;
 	    js.executeScript("arguments[0].scrollIntoView();", bdcard);
-	    Thread.sleep(2000);
+	   // Thread.sleep(2000);
 	    js.executeScript("arguments[0].click();", bdcard);
 	}
 	
@@ -84,7 +84,7 @@ public class GiftPage extends BasePage {
 	public void detailsForm(WebDriver driver) throws InterruptedException{
 		JavascriptExecutor js = (JavascriptExecutor)driver;
 		js.executeScript("arguments[0].scrollIntoView();", inputform);
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 	}
 	
 	//Fill the form details
@@ -106,13 +106,13 @@ public class GiftPage extends BasePage {
 	
 	public void getDisplayedMsg() throws InterruptedException{
 		System.out.println(msgDisplay.getText());
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 	}
 	
 	public void scrollup(WebDriver driver) throws InterruptedException {
 		JavascriptExecutor js = (JavascriptExecutor)driver;
 		js.executeScript("arguments[0].scrollIntoView();", header);
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 	}
 	
 	

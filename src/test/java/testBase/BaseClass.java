@@ -69,7 +69,7 @@ public class BaseClass {
 				return;
 			}
 			
-			URI uri = URI.create("http://10.232.46.40:4444/wd/hub");
+			URI uri = URI.create("http://10.232.42.59:4444/wd/hub");
 			driver=new RemoteWebDriver(uri.toURL(),capabilities);
 			
 		}
